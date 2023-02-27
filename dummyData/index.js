@@ -27,7 +27,10 @@ const seedDB = async() => {
         const rand6 = Math.floor(Math.random() * 6 );
         const trail = new Trails({
             location: `${locations[rand6].city},${locations[rand6].state}`,
-            title: `${sample(trailType)} ${sample(places)}`
+            title: `${sample(trailType)} ${sample(places)}`,
+            description: 'this anything',
+            image:'https://source.unsplash.com/collection/928423/1200x720'
+
         })
         await trail.save();
     }
