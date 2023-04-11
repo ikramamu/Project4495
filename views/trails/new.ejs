@@ -1,8 +1,10 @@
 <% layout('layouts/boilerplate') %>
 <div class="row">
     <h1 class="text-center">New Trail</h1>
-    <div class="col-6 offset-3">
-    <form action="/trails" method="POST" novalidate class="validated-form">
+    <div class="col-md-6 offset-md-3">
+        <div class="card-shadow">
+            <div class="card-body">
+    <form action="/trails" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
         <div class="mb-3">
             <label class="form-label" for="title">Title</label>
             <input class="form-control" type="text" id="title" name="trail[title]" required>
@@ -12,16 +14,19 @@
             <input class="form-control" type="text" id="location" name="trail[location]" required>
         </div>
         <div class="mb-3">
-            <label class="form-label" for="image">Image URL</label>
-            <input class="form-control" type="text" id="image" name="trail[image]" required>
-        </div>
+            <label for="formFileMultiple" class="form-label">Choose file</label>
+            <input class="form-control" type="file" id="formFileMultiple" name="image" multiple>
+          </div>
+        <!-- <div class="form-file">
+            <input type="file" class="form-file-input" id="image" name="image" multiple>
+          </div> -->
         <div class="mb-3">
             <label class="form-label" for="description">Description</label>
             <textarea class="form-control" type="text" id="description" name="trail[description]" required></textarea>
         </div>
         <!-- Questions and Answers-->
         <div class="mb-3">
-            <label class="form-label" for="difficultyLevel">Level of Difficulty</label>
+            <label class="form-label" for="difficultyLevel">Difficulty</label>
             <input class="form-control" type="text" id="difficultyLevel" name="trail[difficultyLevel]">
         </div>
         <div class="mb-3">
@@ -34,7 +39,7 @@
             
         </div>
         <div class="mb-3">
-            <label class="form-label" for="fitnessLevel">Fittness Level Required</label>
+            <label class="form-label" for="fitnessLevel">Physical Rating</label>
             <input class="form-control" type="text" id="fitnessLevel" name="trail[fitnessLevel]">
         </div>
         <!-- Questions and Answers-->
@@ -46,3 +51,5 @@
         <a href="/trails">All Trails</a>
         </div>
     </div>
+</div>
+</div>
